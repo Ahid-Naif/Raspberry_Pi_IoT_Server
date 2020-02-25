@@ -9,8 +9,6 @@
 
 def print_message(lcd, message):
     try:
-        print("in print message")
-        print(message)
         lcd.clear()
         # Turn backlight on
         lcd.set_backlight(0)
