@@ -14,6 +14,8 @@ def displayLCD():
     data = request.get_json()
     data = data['lcd_text']
     lcd  = LCD.Adafruit_CharLCDBackpack(address=0x21)
+    print("in route")
+    print(data)
     print_message(lcd, data)
    
     return 'data was received successfully'
