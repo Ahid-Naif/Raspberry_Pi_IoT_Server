@@ -19,3 +19,9 @@ def print_message(lcd, message):
         # Turn the screen off
         lcd.clear()
         lcd.set_backlight(1)
+
+def clear_lcd():
+    try:
+        lcd.clear()
+        # Turn backlight off
+        lcd.set_backlight(1)

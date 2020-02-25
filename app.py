@@ -1,7 +1,7 @@
 from flask import Flask, request
 import json
 import Adafruit_CharLCD as LCD
-from components.lcd import print_message
+from components.lcd import print_message, clear_lcd
 
 app = Flask(__name__)
 
@@ -17,6 +17,13 @@ def displayLCD():
     print_message(lcd, data)
    
     return 'data was received successfully'
+
+@app.route('/lcd_clear', methods = ['POST'])
+def clearLCD():
+    lcd  = LCD.Adafruit_CharLCDBackpack(address=0x21)
+    clear_lcd(lcd)
+   
+    return 'LCD was cleared successfully'
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
