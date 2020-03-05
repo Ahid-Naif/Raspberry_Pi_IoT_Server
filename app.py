@@ -29,14 +29,18 @@ def clearLCD():
 @app.route('/buzzer_on', methods = ['POST'])
 def buzzerON():
     data = request.get_json()
-    data = data['status']
+    data = data['buzzerStatus']
     buzzer_on(data)
+
+    return 'buzzer is turned on'
 
 @app.route('/buzzer_off', methods = ['POST'])
 def buzzerOFF():
     data = request.get_json()
-    data = data['status']
+    data = data['buzzerStatus']
     buzzer_off(data)
 
+    return "buzzer is turned off"
+
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=5000)
