@@ -13,8 +13,7 @@ GPIO.setup(ECHO, GPIO.IN)
 
 while True:
     GPIO.output(TRIG, False)
-    print("Waiting For Sensor To Settle")
-    time.sleep(2)
+    time.sleep(0.000002)
 
     GPIO.output(TRIG, True)
     time.sleep(0.00001)
