@@ -10,4 +10,4 @@ while True:
     data = {'distance':distance}
     res = requests.post(url,data=data)
 
-    time.sleep(1)
+    time.sleep(0.5)
