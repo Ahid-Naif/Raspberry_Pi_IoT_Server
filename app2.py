@@ -14,3 +14,5 @@ while True:
             'temperature': temperature
             }
     res = requests.post(url,data=data)
+
+    time.sleep(1)
